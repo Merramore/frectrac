@@ -328,27 +328,27 @@
 
     // --- STATS & VIZ ---
     function formatDuration(ms) {
-    if (ms < 1000) return `${ms}ms`; // Handle sub-second gaps
+        if (ms < 1000) return `${ms}ms`; // Handle sub-second gaps
 
-    const seconds = Math.floor(ms / 1000);
-    const minutes = Math.floor(seconds / 60);
-    const hours = Math.floor(minutes / 60);
-    const days = Math.floor(hours / 24);
+        const seconds = Math.floor(ms / 1000);
+        const minutes = Math.floor(seconds / 60);
+        const hours = Math.floor(minutes / 60);
+        const days = Math.floor(hours / 24);
 
-    const d = days;
-    const h = hours % 24;
-    const m = minutes % 60;
-    const s = seconds % 60;
+        const d = days;
+        const h = hours % 24;
+        const m = minutes % 60;
+        const s = seconds % 60;
 
-    const parts = [];
-    if (d > 0) parts.push(`${d} day${d > 1 ? 's' : ''}`);
-    if (h > 0) parts.push(`${h} hour${h > 1 ? 's' : ''}`);
-    if (m > 0) parts.push(`${m} minute${m > 1 ? 's' : ''}`);
-    if (s > 0 || parts.length === 0) parts.push(`${s} second${s > 1 ? 's' : ''}`);
+        const parts = [];
+        if (d > 0) parts.push(`${d} day${d > 1 ? 's' : ''}`);
+        if (h > 0) parts.push(`${h} hour${h > 1 ? 's' : ''}`);
+        if (m > 0) parts.push(`${m} minute${m > 1 ? 's' : ''}`);
+        if (s > 0 || parts.length === 0) parts.push(`${s} second${s > 1 ? 's' : ''}`);
 
-    // Returns "X days, Y hours..." or just "Z seconds"
-    return parts.join(', ');
-}
+        // Returns "X days, Y hours..." or just "Z seconds"
+        return parts.join(', ');
+    }
 
     function renderDetail() {
         const t = getActiveTimeline();
